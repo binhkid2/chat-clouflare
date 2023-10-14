@@ -5,6 +5,7 @@ Want to give Cloudflare Workers AI a try? This repo can help you get started qui
 ## Demo
 https://chat-llama2.pages.dev/
 ## Deploy
+0 . Go cloudflare.com and signup one if dont have account yet
 1. npx @cloudflare/next-on-pages
 2. npx wrangler pages deploy .vercel/output/static
     #### your app is deployed but can't use yet
