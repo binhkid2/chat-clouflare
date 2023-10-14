@@ -4,37 +4,14 @@ Want to give Cloudflare Workers AI a try? This repo can help you get started qui
 
 ## Demo
 
-### Mock ChatGPT Environment
-This environment has most of the critical features like conversation history (which is stored locally), prompting, and multiple conversations. This environment is a great way to see what kind of responses!
+## Deploy
+1. npx @cloudflare/next-on-pages
+2. npx wrangler pages deploy .vercel/output/static
+your app is deployed but can't use yet
+3. Goto your Cloudflare dashboard https://dash.cloudflare.com Workers & Pages section and go to setting of the Pages app you just deployed.
+4. Add environment variables for CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_KEY
+  CLOUDFLARE_ACCOUNT_ID you can find right in that page Workers & Pages/overview
+ CLOUDFLARE_API_KEY (you can create a new key with just Workers AI access)
+5.  Go to that page you deployed Settings>Functions>Compatibility flags section Add 'nodejs_compat' in both product, preview.
 
-### Playground Environment
-This environment lets you test out different system prompts and see how they shift the responses you'll get from Workers AI.
-
-## Running Locally
-To run this project locally, you will need to have [Node.js](https://nodejs.org/en/) installed. Once you have Node.js installed, you can clone this repository and run the following commands:
-
-```bash
-yarn install
-npx @cloudflare/next-on-pages
-npx wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat --binding CLOUDFLARE_ACCOUNT_ID=%YOURCLOUDFLAREACCOUNT% CLOUDFLARE_API_KEY=%YOURCLOUDFLAREAPIKEY%
-```
-
-This will start a local server on port 8788. You can then navigate to `http://127.0.0.1:8788` to view the project!
-
-## Deploying to Cloudflare Pages
-
-You can deploy this applicatin to Cloudflare Pages by running the following commands:
-
-```bash
-npx @cloudflare/next-on-pages
-npx wrangler pages deploy .vercel/output/static
-```
-
-Once this project is created, you'll need to add your environment variables for CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_KEY in the Cloudflare dash under this project's settings. You'll also need to add the `nodejs_compat` compatibility flag under this project's settings within the Settings->Functions section in the Cloudflare dash.
-
-
-## Contributing
-
-**This project is still in development! Contributions are very much appreciated!**
-
-If you would like to contribute to this project, please feel free to open a pull request or an issue, I hashed this project out in a few hours so there are bound to be some bugs!
+Finally run 'npx wrangler pages deploy .vercel/output/static' in your vscode again and your own Llama chat is ready for action!
