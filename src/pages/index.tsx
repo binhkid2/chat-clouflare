@@ -15,8 +15,8 @@ export default function Chat() {
   return (
     <React.Fragment>
       <Head>
-        <title>ChatCloudflare</title>
-        <meta name="description" content="A clone of OpenAI playground." />
+        <title>TheheAi-Free Chat Llama 2</title>
+        <meta name="description" content="TheheAi.com Ai models chat free" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
